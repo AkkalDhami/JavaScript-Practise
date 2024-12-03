@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Area Of Traingle</title>
+  </head>
+  <body>
+    <script>
+      let side1 = parseFloat(prompt("Enter the side-1 of traingle"));
+      let side2 = parseFloat(prompt("Enter the side-2 of traingle"));
+      let side3 = parseFloat(prompt("Enter the side-3 of traingle"));
+
+      let semiPerimeter = (side1 + side2 + side3) / 2;
+      let area = Math.sqrt(
+        semiPerimeter *
+          (semiPerimeter - side1) *
+          (semiPerimeter - side2) *
+          (semiPerimeter - side3)
+      );
+      document.write("Area of Traingle : " + area.toFixed(2) + "<br>");
+      // toFixed(2) => 12.34, 34.45  two digits after the decimal
+    </script>
+  </body>
+</html>
