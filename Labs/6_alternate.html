@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Maximum Number</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let numbers = new Array(10); // declare a array of 10 elements ; just a  syntax to declare an array
+      let maxNum = 0;
+
+      for (let i = 0; i < 10; i++) {
+        numbers[i] = parseFloat(prompt("Enter number " + (i + 1) + ":"));
+      }
+
+      for (let i = 0; i < 10; i++) {
+        if (numbers[i] > maxNum) {
+          maxNum = numbers[i];
+        }
+      }
+
+      document.write("<h1>Maximum Number: " + maxNum + "</h1>");
+      document.write("<h2>Program Executed By Akkal Dhami</h2>");
+    </script>
+  </body>
+</html>
