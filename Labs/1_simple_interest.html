@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!--Just Styling the Font Family of body element (optional)  -->
+    <style>
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+    </style>
+
+  </head>
+  <body>
+    <script>
+      let p = Number(prompt("Enter Principal Amount"));
+      let r = Number(prompt("Enter Rate of Interest (in %)"));
+      let t = Number(prompt("Enter Time (in years)"));
+
+      let si = (p * t * r) / 100;
+
+      document.write("<h1>Simple Interest = " + si.toFixed(2) + "</h1>");
+      document.write("<h2>Program Executed By Akkal Dhami</h2>");
+    </script>
+  </body>
+</html>
