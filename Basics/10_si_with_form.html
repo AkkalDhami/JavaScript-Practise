@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!--Just Styling the Font Family of body element (optional)  -->
+    <style>
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Arithmetic Operations</h1>
+    <label for="num1">Principal:</label> <br />
+    <input type="number" id="num1" name="num1" /> <br />
+
+    <label for="num2">Time in years:</label> <br />
+    <input type="number" id="num2" name="num2" /> <br />
+
+    <label for="num2">Rate in %:</label> <br />
+    <input type="number" id="num3" name="num3" /> <br />
+    <br />
+
+    <button onclick="calculateSI()">Simple Interest</button> <br />
+    <br />
+    <input id="output" />
+
+    <script>
+      function calculateSI() {
+        let p = parseInt(document.getElementById("num1").value);
+        let t = parseInt(document.getElementById("num2").value);
+        let r = parseInt(document.getElementById("num3").value);
+        let result = (p * t * r) / 100;
+        document.getElementById("output").value = "Simple Interest: " + result;
+      }
+
+      document.write("<h3>Program Executed By Rajan Chattyal</h3>");
+    </script>
+  </body>
+</html>

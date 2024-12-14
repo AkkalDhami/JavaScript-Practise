@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!--Just Styling the Font Family of body element (optional)  -->
+    <style>
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let n = parseInt(prompt("Enter number"));
+      let sum = 0;
+      for (let i = 1; i <= n; i++) {
+        sum += i;
+      }
+
+      document.write(`<h3>Sum of first ${n} natural number: ${sum}</h3>`);
+      document.write("<h3>Program Executed By Rajan Chattyal</h3>");
+    </script>
+  </body>
+</html>

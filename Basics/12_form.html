@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" /><br />
+
+      <label for="zipCode">Zip Code:</label><br />
+      <input type="text" id="zipCode" name="zipCode" /><br />
+      <br />
+      <select id="country">
+        <option value="-1" selected disabled>Select Country</option>
+        <option value="Nepal">Nepal</option>
+        <option value="China">China</option>
+        <option value="India">India</option>
+      </select>
+      <br /><br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      let name = document.getElementById("name");
+      let email = document.getElementById("email");
+      let zipCode = document.getElementById("zipCode");
+      let country = document.getElementById("country");
+      let form = document.getElementById("form");
+      form.addEventListener("submit", function validate(e) {
+        e.preventDefault();
+
+        if (name.value === "") {
+          alert("Name is required");
+          name.focus();
+          return false;
+        } else if (email.value === "") {
+          alert("Email is required");
+          email.focus();
+          return false;
+        } else if (zipCode.value === "") {
+          alert("Zip Code is required");
+          zipCode.focus();
+          return false;
+        } else if (country.value === "-1") {
+          alert("Country is required");
+          country.focus();
+          return false;
+        }
+
+        return true;
+    });
+    document.write(`Program Executed By Rajan Chattyal`);
+    </script>
+  </body>
+</html>

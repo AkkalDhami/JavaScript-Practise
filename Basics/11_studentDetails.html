@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let studentDetails = [];
+      for (let i = 0; i < 2; i++) {
+        let name = prompt("Enter your name");
+        let roll = prompt("Enter your roll no");
+        let marks = [];
+        for (let j = 0; j < 3; j++) {
+          let subjectMarks = prompt("Enter subject" + (j + 1) + " Marks ");
+          marks.push(Number(subjectMarks));
+        }
+        studentDetails.push({
+          name: name,
+          roll: roll,
+          marks: marks,
+        });
+      }
+      studentDetails.forEach((details, index) => {
+        document.write("<br>Student " + (index + 1) + " details <br>");
+        document.write("Name: " + details.name + "<br>");
+        document.write("Roll No: " + details.roll + "<br>");
+        details.marks.forEach((subMarks, index) => {
+          document.write(
+            "Subject " + (index + 1) + " Marks : " + subMarks + "<br>"
+          );
+        });
+      });
+      document.write("<h3>Program Executed By Rajan Chattyal</h3>");
+    </script>
+  </body>
+</html>
