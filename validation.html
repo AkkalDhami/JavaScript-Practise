@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form">
+      <label for="name">Name:</label><br />
+
+      <input type="text" id="name" /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" />
+      <p id="error" style="color: #ce0e0e; display: none">
+        email is required!!
+      </p>
+
+      <br /><br />
+      <label for="contact">Contact No:</label><br />
+      <input type="number" id="contact" /><br />
+      <br />
+
+      <label for="contact2">Contact No2:</label><br />
+      <input type="number" id="contact2" /><br />
+      <br />
+
+      <label for="zipCode">Zip Code:</label><br />
+      <input type="number" id="zipCode" /><br />
+      <br />
+      <select id="country">
+        <option value="0" selected disabled>Select Country</option>
+        <option value="Nepal">Nepal</option>
+        <option value="China">China</option>
+        <option value="India">India</option>
+      </select>
+
+      <br /><br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      let form = document.getElementById("form");
+
+      form.onsubmit = function (e) {
+        validate(e);
+      };
+
+      function validate(e) {
+        e.preventDefault();
+
+        let name = document.getElementById("name");
+        if (name.value == "") {
+          alert("Name is required");
+          name.focus();
+        }
+
+        let email = document.getElementById("email");
+        if (email.value == "") {
+          document.getElementById("error").style.display = "block";
+          alert("email is required");
+          email.focus();
+        }
+
+        let zipCode = document.getElementById("zipCode");
+        if (zipCode.value == "") {
+          alert("zipCode is required");
+          zipCode.focus();
+        }
+
+        let contact = document.getElementById("contact");
+        if (contact.value == "" || contact.value.length !== 10) {
+          alert("contact no is not valid");
+          contact.focus();
+        }
+
+        let contact2 = document.getElementById("contact2");
+        if (contact2.value == "" || contact2.value.length !== 10) {
+          alert("contact no2 is not valid");
+          contact2.focus();
+        }
+
+        if (contact2.value != contact.value) {
+          alert("Contact numbers should be same");
+          contact2.focus();
+        }
+
+        let country = document.getElementById("country");
+        if (country.value == "0") {
+          alert("country is required");
+          country.focus();
+        }
+
+        console.log(
+          name.value,
+          email.value,
+          zipCode.value,
+          country.value,
+          contact.value
+        );
+      }
+    </script>
+  </body>
+</html>
