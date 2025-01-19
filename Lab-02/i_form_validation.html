@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+      .error {
+        color: red;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Form Validation Example</h3>
+    <form id="myForm">
+      <label for="username">Username:</label> <br>
+      <input type="text" id="username" name="username" /> <br />
+      <span id="usernameError" class="error"></span><br /><br />
+
+      <label for="email">Email:</label> <br>
+      <input type="email" id="email" name="email" /> <br />
+      <span id="emailError" class="error"></span><br /><br />
+
+      <label for="password">Password:</label> <br>
+      <input type="password" id="password" name="password" minlength="6" />
+      <br />
+      <span id="passwordError" class="error"></span><br /><br />
+
+      <button type="submit">Submit</button>
+      <h3>Program Executed By Akkal Dhami</h3>
+    </form>
+
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          let isValid = true;
+
+          const username = document.getElementById("username");
+          const email = document.getElementById("email");
+          const password = document.getElementById("password");
+
+          document.getElementById("usernameError").textContent = "";
+          document.getElementById("emailError").textContent = "";
+          document.getElementById("passwordError").textContent = "";
+
+          if (username.value.trim() === "") {
+            document.getElementById("usernameError").textContent =
+              "Username is required.";
+            isValid = false;
+          }
+
+          const emailPattern =
+            /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+          if (!emailPattern.test(email.value.trim())) {
+            document.getElementById("emailError").textContent =
+              "Invalid email format.";
+            isValid = false;
+          }
+
+          if (password.value.length < 6) {
+            document.getElementById("passwordError").textContent =
+              "Password must be at least 6 characters.";
+            isValid = false;
+          }
+
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+    </script>
+  </body>
+</html>
