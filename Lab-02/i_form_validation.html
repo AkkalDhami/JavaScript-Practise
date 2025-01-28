@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form Validation</title>
-    <style>
-      .error {
-        color: red;
-        font-size: 16px;
-      }
-    </style>
-  </head>
-  <body>
-    <h3>Form Validation Example</h3>
-    <form id="myForm">
-      <label for="username">Username:</label> <br>
-      <input type="text" id="username" name="username" /> <br />
-      <span id="usernameError" class="error"></span><br /><br />
 
-      <label for="email">Email:</label> <br>
-      <input type="email" id="email" name="email" /> <br />
-      <span id="emailError" class="error"></span><br /><br />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Validation</title>
+  <style>
+    .error {
+      color: red;
+      font-size: 16px;
+    }
+  </style>
+</head>
 
-      <label for="password">Password:</label> <br>
-      <input type="password" id="password" name="password" minlength="6" />
-      <br />
-      <span id="passwordError" class="error"></span><br /><br />
+<body>
+  <h3>Form Validation Example</h3>
+  <form id="myForm">
+    <label for="username">Username:</label> <br>
+    <input type="text" id="username" name="username" /> <br />
+    <span id="usernameError" class="error"></span><br /><br />
 
-      <button type="submit">Submit</button>
-      <h3>Program Executed By Rajan Chattyal</h3>     
-      <!-- <h3>Program Executed By Akkal Dhami</h3> -->
-    </form>
+    <label for="email">Email:</label> <br>
+    <input type="email" id="email" name="email" /> <br />
+    <span id="emailError" class="error"></span><br /><br />
 
-    <script>
-      document
-        .getElementById("myForm")
-        .addEventListener("submit", function (event) {
-          let isValid = true;
+    <label for="password">Password:</label> <br>
+    <input type="password" id="password" name="password" minlength="6" />
+    <br />
+    <span id="passwordError" class="error"></span><br /><br />
 
-          const username = document.getElementById("username");
-          const email = document.getElementById("email");
-          const password = document.getElementById("password");
+    <button type="submit">Submit</button>
+    <h3>Program Executed By Rajan Chattyal</h3>
+    <!-- <h3>Program Executed By Akkal Dhami</h3> -->
+  </form>
 
-          document.getElementById("usernameError").textContent = "";
-          document.getElementById("emailError").textContent = "";
-          document.getElementById("passwordError").textContent = "";
+  <script>
+    document
+      .getElementById("myForm")
+      .addEventListener("submit", function (event) {
+        let isValid = true;
 
-          if (username.value.trim() === "") {
-            document.getElementById("usernameError").textContent =
-              "Username is required.";
-            isValid = false;
-          }
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
 
-          const emailPattern =
-            /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-          if (!emailPattern.test(email.value.trim())) {
-            document.getElementById("emailError").textContent =
-              "Invalid email format.";
-            isValid = false;
-          }
+        document.getElementById("usernameError").textContent = "";
+        document.getElementById("emailError").textContent = "";
+        document.getElementById("passwordError").textContent = "";
 
-          if (password.value.length < 6) {
-            document.getElementById("passwordError").textContent =
-              "Password must be at least 6 characters.";
-            isValid = false;
-          }
+        if (username.value.trim() === "") {
+          document.getElementById("usernameError").textContent =
+            "Username is required.";
+          isValid = false;
+        }
 
-          if (!isValid) {
-            event.preventDefault();
-          }
-        });
-    </script>
-  </body>
+        const emailPattern =
+          /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email.value.trim())) {
+          document.getElementById("emailError").textContent =
+            "Invalid email format.";
+          isValid = false;
+        }
+
+        if (password.value.length < 6) {
+          document.getElementById("passwordError").textContent =
+            "Password must be at least 6 characters.";
+          isValid = false;
+        }
+
+        if (!isValid) {
+          event.preventDefault();
+        }
+      });
+  </script>
+</body>
+
 </html>
