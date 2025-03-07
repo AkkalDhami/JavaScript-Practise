@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* text-align: center; */
+            margin-top: 50px;
+            padding: 50px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+            border: none;
+            margin-left: 10px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Factorial Calculator</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="Factorial()">Calculate</button>
+    <div id="result"></div>
+
+    <script>
+        function factorial(n) {
+            if (n < 0) return "Invalid input!";
+            if (n === 0 || n === 1) return 1;
+            let fact = 1;
+            for (let i = 2; i <= n; i++) {
+                fact *= i;
+            }
+            return fact;
+        }
+
+        function Factorial() {
+            const num = document.getElementById("numberInput").value;
+            const resultDiv = document.getElementById("result");
+
+            if (num === "" || isNaN(num)) {
+                resultDiv.innerHTML = "Please enter a valid number!";
+                return;
+            }
+
+            const number = parseInt(num);
+            const result = factorial(number);
+            resultDiv.innerHTML = `Factorial of ${number} is: <strong>${result}</strong>`;
+        }
+    </script>
+
+</body>
+
+</html>
