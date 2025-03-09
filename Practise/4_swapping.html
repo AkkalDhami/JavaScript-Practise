@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Two Variables</title>
+</head>
+
+<body>
+    <!--  Develop a program in JavaScript to exchange/swap the values of any two variables. -->
+    <script>
+        let a = 12;
+        let b = 23;
+        document.write("Before Swapping:<br>");
+        document.write("a = " + a + ", b = " + b + "<br>");
+
+        function swapValues(x, y) {
+            return [y, x];
+        }
+        [a, b] = swapValues(a, b);
+
+        // OR, simple:  [a, b] = [b, a]
+
+        document.write("After Swapping:<br>");
+        document.write("a = " + a + ", b = " + b);
+    </script>
+</body>
+
+</html>
