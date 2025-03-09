@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Equation Solver</title>
+</head>
+
+<body>
+    <!-- WAP to solve quadratic equation  -->
+    <h2>Quadratic Equation Solver</h2>
+    <script>
+        let a = Number(prompt("Enter coefficient a:"));
+        let b = Number(prompt("Enter coefficient b:"));
+        let c = Number(prompt("Enter coefficient c:"));
+        function solveQuadratic(a, b, c) {
+            if (a === 0) {
+                alert("Invalid input: a cannot be zero.");
+                return;
+            }
+
+            let D = b * b - 4 * a * c;
+            let result = "";
+
+            if (D > 0) {
+                let root1 = (-b + Math.sqrt(D)) / (2 * a);
+                let root2 = (-b - Math.sqrt(D)) / (2 * a);
+                result = `Roots are real and distinct: ${root1}, ${root2}`;
+            } else if (D === 0) {
+                let root = -b / (2 * a);
+                result = `Roots are real and equal: ${root}`;
+            } else {
+                let rp = (-b / (2 * a)).toFixed(2);
+                let up = (Math.sqrt(-D) / (2 * a)).toFixed(2);
+                result = `Roots are complex: ${rp} ± ${up}i`;
+            }
+
+            document.write("<p>" + result + "</p>");
+        }
+
+        solveQuadratic(a, b, c);
+    </script>
+</body>
+
+</html>
