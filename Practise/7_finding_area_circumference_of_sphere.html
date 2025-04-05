@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- WAP to find area and circumference of sphere -->
+    <h2>Area and Circumference of Sphere</h2>
+    <script>
+
+        let r = parseFloat(prompt("Enter the radius of the sphere:"));
+        if (isNaN(r) || r <= 0) {
+            do {
+                alert("Invalid input. Please enter a positive integer.");
+                r = parseFloat(prompt("Enter the radius of the sphere:"));
+            } while (isNaN(r) || r <= 0);
+        }
+
+        function sphereArea(r) {
+            return 4 * Math.PI * r * r;
+        }
+
+        function sphereCircumference(r) {
+            return 2 * Math.PI * r;
+        }
+        
+        document.write("Area of the sphere: " + sphereArea(r).toFixed(2) + " sq unit<br>");
+        document.write("Circumference of the sphere: " + sphereCircumference(r).toFixed(2));
+    </script>
+</body>
+
+</html>
