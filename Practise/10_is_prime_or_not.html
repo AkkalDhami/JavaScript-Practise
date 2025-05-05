@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- WAP to check the number is prime or not input by the user -->
+
+    <script>
+
+        let num = parseInt(prompt("Enter a number: "))
+        if (!num) {
+            alert("Please enter a valid positive number");
+        } else {
+            function isPrime(num) {
+                if (num <= 1) {
+                    return false;
+                }
+                if (num === 2) {
+                    return true;
+                }
+                if (num % 2 === 0) {
+                    return false;
+                }
+                for (let i = 3; i <= Math.sqrt(num); i += 2) {
+                    if (num % i === 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            document.write(`<h2>${num} is ${isPrime(num) ? 'prime number ' : ' not prime number'}</h2>`);
+        }
+
+    </script>
+</body>
+
+</html>
