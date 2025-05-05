@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Find Largest and Smallest Element in the array</h1>
+
+    <script>
+        let nums = [];
+        let n;
+        n = parseInt(prompt("Enter no of elements: "));
+        if (isNaN(n) || n <= 0) {
+            alert("Please enter a valid positive number");
+        } else {
+
+            for (let i = 0; i < n; i++) {
+                let num = parseInt(prompt(`Enter element-${i + 1}: `));
+                if (isNaN(num)) {
+                    alert("Invalid number entered");
+                    break;
+                }
+                nums.push(num);
+            }
+
+
+            function findLargest(nums) {
+                let max = nums[0];
+                for (let i = 0; i < nums.length; i++) {
+                    if (nums[i] > max) {
+                        max = nums[i];
+                    }
+                }
+                return max;
+            }
+
+            function findSmallest(nums) {
+                let min = nums[0];
+                for (let i = 0; i < nums.length; i++) {
+                    if (nums[i] < min) {
+                        min = nums[i];
+                    }
+                }
+                return min;
+            }
+            document.writeln(`<h2>Numbers: ${nums.join(", ")} </h2>`)
+            document.writeln(`<h2>Largest Number: ${findLargest(nums)}</h2>`)
+            document.writeln(`<h2>Smallest Number: ${findSmallest(nums)}</h2>`)
+
+        }
+
+    </script>
+
+</body>
+
+</html>
